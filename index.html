@@ -967,49 +967,6 @@ footer {
 }
 .toast.show { transform: translateY(0); }
 
-/* ============================================
-   RESPONSIVE BREAKPOINTS — MOBILE FIRST
-   (min-width = enhance upward)
-============================================ */
-
-/* Small tablets and up (≥ 600px) */
-@media (min-width: 600px) {
-  .hero-actions {
-    flex-direction: row; justify-content: center;
-  }
-  .btn-primary, .btn-ghost { width: auto; }
-  .form-row-2 { grid-template-columns: 1fr 1fr; }
-  .about-metrics { grid-template-columns: repeat(3, 1fr); }
-  .footer-links-grid { grid-template-columns: repeat(3, 1fr); }
-}
-
-/* Tablets and up (≥ 768px) */
-@media (min-width: 768px) {
-  nav { height: 68px; padding: 0 clamp(32px,5vw,60px); }
-  .hamburger { display: none; }
-  .nav-links { display: flex; }
-  .nav-cta { display: inline-flex; }
-  .mobile-menu { display: none !important; }
-  .services-grid { grid-template-columns: 1fr 1fr; }
-  .footer-top { grid-template-columns: 2fr 1fr; }
-}
-
-/* Desktop and up (≥ 1024px) */
-@media (min-width: 1024px) {
-  .about-grid { grid-template-columns: 1fr 1fr; gap: 80px; }
-  .tech-grid { grid-template-columns: 1fr 1fr; gap: 60px; }
-  .tech-highlight { position: sticky; top: 100px; }
-  .contact-grid { grid-template-columns: 1fr 1fr; gap: 80px; }
-  .services-grid { grid-template-columns: repeat(3, 1fr); }
-  .footer-top { grid-template-columns: 2fr 1fr 1fr 1fr; }
-  .footer-links-grid { display: contents; }
-}
-
-/* Large desktop (≥ 1280px) */
-@media (min-width: 1280px) {
-  section { padding: var(--space-xl) clamp(60px,8vw,120px); }
-}
-
 </style>
 </head>
 <body>
@@ -1356,7 +1313,7 @@ footer {
             <div class="location-detail-icon">📞</div>
             <div class="location-detail-text">
               <strong>Phone</strong>
-              +234 703 773 9518 0000
+              +234 703 773 9518
             </div>
           </div>
           <div class="location-detail">
@@ -1412,30 +1369,31 @@ footer {
       </div>
 
       <div class="reveal reveal-d2">
-        <form class="lead-form" id="leadForm" novalidate>
+        <!-- PRODUCTION FORM WITH FORMSPREE INTEGRATION -->
+        <form class="lead-form" id="leadForm" action="https://formspree.io/f/xojpbkey" method="POST" novalidate>
           <div class="form-row-2">
             <div class="form-field">
               <label for="fname">First Name *</label>
-              <input type="text" id="fname" placeholder="John" required autocomplete="given-name">
+              <input type="text" id="fname" name="fname" placeholder="John" required autocomplete="given-name">
             </div>
             <div class="form-field">
               <label for="lname">Last Name *</label>
-              <input type="text" id="lname" placeholder="Doe" required autocomplete="family-name">
+              <input type="text" id="lname" name="lname" placeholder="Doe" required autocomplete="family-name">
             </div>
           </div>
           <div class="form-row-2">
             <div class="form-field">
               <label for="email">Email Address *</label>
-              <input type="email" id="email" placeholder="john@company.com" required autocomplete="email">
+              <input type="email" id="email" name="email" placeholder="john@company.com" required autocomplete="email">
             </div>
             <div class="form-field">
               <label for="phone">Phone Number</label>
-              <input type="tel" id="phone" placeholder="+254 700 000 000" autocomplete="tel">
+              <input type="tel" id="phone" name="phone" placeholder="+254 700 000 000" autocomplete="tel">
             </div>
           </div>
           <div class="form-field">
             <label for="service">Service of Interest *</label>
-            <select id="service" required>
+            <select id="service" name="service" required>
               <option value="" disabled selected>Select a service...</option>
               <option>Elevator Installation</option>
               <option>Repairs & Maintenance</option>
@@ -1449,8 +1407,13 @@ footer {
           </div>
           <div class="form-field">
             <label for="message">Project Details</label>
-            <textarea id="message" placeholder="Tell us about your project, building type, timeline, or any questions..."></textarea>
+            <textarea id="message" name="message" placeholder="Tell us about your project, building type, timeline, or any questions..."></textarea>
           </div>
+
+          <!-- Formspree hidden fields for clean inbox emails -->
+          <input type="hidden" name="_subject" value="New Lead from Advanced Point Website">
+          <input type="hidden" name="_language" value="en">
+
           <button type="submit" class="form-submit">
             <span>Send Enquiry — No Obligation</span>
           </button>
@@ -1565,7 +1528,6 @@ hamburger.addEventListener('click', () => {
 mobileLinks.forEach(link => {
   link.addEventListener('click', () => {
     closeMobileMenu();
-    // If it's the CTA button, scroll to contact
     if (link.classList.contains('mobile-menu-cta')) {
       setTimeout(() => {
         document.getElementById('contact').scrollIntoView({ behavior: 'smooth' });
@@ -1591,20 +1553,66 @@ const revealObserver = new IntersectionObserver(entries => {
 }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
 reveals.forEach(r => revealObserver.observe(r));
 
-/* ============ FORM SUBMIT ============ */
-document.getElementById('leadForm').addEventListener('submit', function(e) {
-  e.preventDefault();
-  // Basic validation
-  const fname = document.getElementById('fname').value.trim();
-  const email = document.getElementById('email').value.trim();
-  const service = document.getElementById('service').value;
-  if (!fname || !email || !service) return;
+/* ============ FORM SUBMIT — FORMSPREE (AJAX + Inbox Delivery) ============ */
+const leadForm = document.getElementById('leadForm');
 
-  const toast = document.getElementById('toast');
-  toast.classList.add('show');
-  setTimeout(() => toast.classList.remove('show'), 4500);
-  this.reset();
-});
+if (leadForm) {
+  leadForm.addEventListener('submit', async function(e) {
+    e.preventDefault();
+
+    const form = this;
+    const submitButton = form.querySelector('.form-submit');
+    const buttonSpan = submitButton.querySelector('span');
+    const originalButtonText = buttonSpan.innerHTML;
+
+    // Disable button + loading state
+    submitButton.disabled = true;
+    buttonSpan.innerHTML = 'Sending enquiry...';
+
+    try {
+      const response = await fetch(form.action, {
+        method: form.method,
+        body: new FormData(form),
+        headers: {
+          'Accept': 'application/json'
+        }
+      });
+
+      if (response.ok) {
+        // SUCCESS → show toast + reset form
+        const toast = document.getElementById('toast');
+        toast.classList.add('show');
+        setTimeout(() => toast.classList.remove('show'), 4500);
+        form.reset();
+      } else {
+        throw new Error('Formspree error');
+      }
+    } catch (error) {
+      // Simple error toast
+      const errorToast = document.createElement('div');
+      errorToast.style.cssText = `
+        position: fixed; 
+        bottom: clamp(16px,4vw,32px); 
+        left: 50%; 
+        transform: translateX(-50%); 
+        background: #ff4444; 
+        color: white; 
+        padding: 16px 24px; 
+        font-size: 14px; 
+        border-radius: 4px; 
+        z-index: 10000; 
+        box-shadow: 0 4px 12px rgba(0,0,0,.3);
+      `;
+      errorToast.textContent = '⚠️ Something went wrong. Please try again.';
+      document.body.appendChild(errorToast);
+      setTimeout(() => errorToast.remove(), 4000);
+    } finally {
+      // Restore button
+      submitButton.disabled = false;
+      buttonSpan.innerHTML = originalButtonText;
+    }
+  });
+}
 
 /* ============ SMOOTH ANCHOR SCROLL ============ */
 document.querySelectorAll('a[href^="#"]').forEach(a => {
