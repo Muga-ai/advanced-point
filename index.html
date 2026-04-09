@@ -3,15 +3,12 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
-<meta name="description" content="Advanced Point PVT Ltd — Futuristic elevator engineering services. Air-powered technology, child & senior safe, installations, repairs, training and more.">
+<meta name="description" content="Advanced Point PVT Ltd — Futuristic elevator engineering services. Traction, hydraulic, vacuum, stairlifts & more. Installations, repairs, training across Africa.">
 <title>Advanced Point PVT Ltd — Elevating the Future</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
 <style>
 
-/* ============================================
-   CSS CUSTOM PROPERTIES
-============================================ */
 :root {
   --obsidian: #0a0a0c;
   --charcoal: #141418;
@@ -27,15 +24,11 @@
   --white-border: rgba(255,255,255,0.06);
   --font-display: 'Cormorant Garamond', Georgia, serif;
   --font-body: 'DM Sans', sans-serif;
-
-  /* Fluid spacing scale */
   --space-xs: clamp(8px, 2vw, 12px);
   --space-sm: clamp(12px, 3vw, 20px);
   --space-md: clamp(20px, 4vw, 36px);
   --space-lg: clamp(36px, 6vw, 64px);
   --space-xl: clamp(60px, 10vw, 120px);
-
-  /* Fluid type scale */
   --text-xs: clamp(10px, 2.5vw, 11px);
   --text-sm: clamp(12px, 3vw, 14px);
   --text-base: clamp(14px, 3.5vw, 16px);
@@ -43,24 +36,14 @@
   --text-xl: clamp(20px, 5vw, 28px);
   --text-2xl: clamp(28px, 7vw, 48px);
   --text-hero: clamp(44px, 12vw, 108px);
-
-  /* Touch targets */
   --touch-min: 48px;
 }
 
-/* ============================================
-   RESET & BASE
-============================================ */
 *, *::before, *::after {
   margin: 0; padding: 0; box-sizing: border-box;
   -webkit-tap-highlight-color: transparent;
 }
-
-html {
-  scroll-behavior: smooth;
-  -webkit-text-size-adjust: 100%;
-}
-
+html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
 body {
   background: var(--obsidian);
   color: var(--ivory);
@@ -69,12 +52,10 @@ body {
   overflow-x: hidden;
   line-height: 1.6;
 }
-
 img { max-width: 100%; display: block; }
 a { text-decoration: none; color: inherit; }
 button { font-family: var(--font-body); }
 
-/* Noise overlay */
 body::after {
   content: '';
   position: fixed; inset: 0;
@@ -82,7 +63,6 @@ body::after {
   pointer-events: none; z-index: 9990; opacity: 0.35;
 }
 
-/* Custom cursor — desktop only */
 @media (hover: hover) and (pointer: fine) {
   body { cursor: none; }
   .cursor {
@@ -118,7 +98,6 @@ nav {
   border-bottom: 1px solid var(--white-border);
   transition: background .3s;
 }
-
 nav.scrolled { background: rgba(10,10,12,0.96); }
 
 .nav-logo {
@@ -136,11 +115,9 @@ nav.scrolled { background: rgba(10,10,12,0.96); }
   color: var(--gold); text-transform: uppercase;
 }
 
-/* Desktop nav links */
 .nav-links {
   display: none;
-  gap: 36px; list-style: none;
-  align-items: center;
+  gap: 36px; list-style: none; align-items: center;
 }
 .nav-links a {
   color: var(--silver); font-size: var(--text-xs);
@@ -158,9 +135,7 @@ nav.scrolled { background: rgba(10,10,12,0.96); }
 .nav-links a:hover { color: var(--ivory); }
 .nav-links a:hover::after { width: 100%; }
 
-.nav-right {
-  display: flex; align-items: center; gap: var(--space-sm);
-}
+.nav-right { display: flex; align-items: center; gap: var(--space-sm); }
 
 .nav-cta {
   border: 1px solid var(--gold);
@@ -169,31 +144,26 @@ nav.scrolled { background: rgba(10,10,12,0.96); }
   font-size: var(--text-xs); letter-spacing: 0.2em;
   text-transform: uppercase; cursor: pointer;
   transition: all .3s; white-space: nowrap;
-  display: none; /* shown on desktop */
-  min-height: var(--touch-min);
-  align-items: center;
+  display: none;
+  min-height: var(--touch-min); align-items: center;
 }
 .nav-cta:hover { background: var(--gold); color: var(--obsidian); }
 
-/* Hamburger */
 .hamburger {
   display: flex; flex-direction: column;
   justify-content: center; gap: 5px;
   width: var(--touch-min); height: var(--touch-min);
   background: none; border: none; cursor: pointer;
-  padding: 12px; z-index: 600;
-  flex-shrink: 0;
+  padding: 12px; z-index: 600; flex-shrink: 0;
 }
 .hamburger span {
   display: block; width: 22px; height: 1.5px;
-  background: var(--ivory); transition: all .35s;
-  transform-origin: center;
+  background: var(--ivory); transition: all .35s; transform-origin: center;
 }
 .hamburger.open span:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
 .hamburger.open span:nth-child(2) { opacity: 0; transform: scaleX(0); }
 .hamburger.open span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
 
-/* Mobile drawer */
 .mobile-menu {
   position: fixed; inset: 0; z-index: 400;
   background: var(--obsidian);
@@ -210,10 +180,8 @@ nav.scrolled { background: rgba(10,10,12,0.96); }
   font-size: clamp(32px, 8vw, 52px);
   font-weight: 300; color: var(--ivory);
   letter-spacing: 0.02em; text-align: center;
-  transition: color .3s;
-  padding: var(--space-xs) 0;
-  min-height: var(--touch-min);
-  display: flex; align-items: center;
+  transition: color .3s; padding: var(--space-xs) 0;
+  min-height: var(--touch-min); display: flex; align-items: center;
 }
 .mobile-menu a:hover { color: var(--gold); }
 .mobile-menu-cta {
@@ -241,7 +209,6 @@ nav.scrolled { background: rgba(10,10,12,0.96); }
   padding: calc(64px + var(--space-xl)) var(--space-md) var(--space-xl);
   text-align: center;
 }
-
 .hero-bg {
   position: absolute; inset: 0;
   background:
@@ -249,7 +216,6 @@ nav.scrolled { background: rgba(10,10,12,0.96); }
     radial-gradient(ellipse 60% 80% at 80% 80%, rgba(196,74,42,0.04) 0%, transparent 50%),
     linear-gradient(180deg, var(--obsidian) 0%, #0d0d12 100%);
 }
-
 .hero-grid {
   position: absolute; inset: 0;
   background-image:
@@ -258,12 +224,9 @@ nav.scrolled { background: rgba(10,10,12,0.96); }
   background-size: clamp(40px,8vw,60px) clamp(40px,8vw,60px);
   mask-image: radial-gradient(ellipse 80% 80% at 50% 50%, black, transparent);
 }
-
-/* Elevator shaft animation */
 .shaft-wrap {
   position: absolute; inset: 0;
-  overflow: hidden; opacity: 0.06;
-  pointer-events: none;
+  overflow: hidden; opacity: 0.06; pointer-events: none;
 }
 .shaft-center {
   position: absolute; left: 50%; top: 0; bottom: 0;
@@ -283,12 +246,7 @@ nav.scrolled { background: rgba(10,10,12,0.96); }
   0% { top: -80px; opacity: 1; }
   100% { top: 110%; opacity: 0.3; }
 }
-
-.hero-content {
-  position: relative; z-index: 2;
-  max-width: min(800px, 100%);
-}
-
+.hero-content { position: relative; z-index: 2; max-width: min(800px, 100%); }
 .hero-eyebrow {
   display: inline-flex; align-items: center; gap: 10px;
   font-size: var(--text-xs); letter-spacing: 0.35em;
@@ -300,7 +258,6 @@ nav.scrolled { background: rgba(10,10,12,0.96); }
   content: ''; width: clamp(20px,5vw,40px); height: 1px;
   background: var(--gold); opacity: .5; flex-shrink: 0;
 }
-
 .hero-title {
   font-family: var(--font-display);
   font-size: var(--text-hero);
@@ -313,24 +270,18 @@ nav.scrolled { background: rgba(10,10,12,0.96); }
   font-style: italic;
   background: linear-gradient(135deg, var(--gold), var(--gold-light) 50%, var(--gold));
   -webkit-background-clip: text; -webkit-text-fill-color: transparent;
-  background-clip: text;
-  display: block;
+  background-clip: text; display: block;
 }
-
 .hero-sub {
-  font-size: var(--text-base);
-  line-height: 1.75; color: var(--silver);
+  font-size: var(--text-base); line-height: 1.75; color: var(--silver);
   max-width: min(520px, 100%); margin: 0 auto var(--space-lg);
-  font-weight: 300;
-  opacity: 0; animation: fadeUp .9s .8s forwards;
+  font-weight: 300; opacity: 0; animation: fadeUp .9s .8s forwards;
 }
-
 .hero-actions {
   display: flex; flex-direction: column;
   gap: var(--space-sm); align-items: center;
   opacity: 0; animation: fadeUp .9s 1s forwards;
 }
-
 .btn-primary {
   background: var(--gold); color: var(--obsidian);
   border: none; padding: 0 clamp(28px,6vw,44px);
@@ -344,12 +295,10 @@ nav.scrolled { background: rgba(10,10,12,0.96); }
 }
 .btn-primary::before {
   content: ''; position: absolute; inset: 0;
-  background: var(--gold-light);
-  transform: translateX(-101%); transition: transform .3s;
+  background: var(--gold-light); transform: translateX(-101%); transition: transform .3s;
 }
 .btn-primary:hover::before { transform: translateX(0); }
 .btn-primary span { position: relative; z-index: 1; }
-
 .btn-ghost {
   background: transparent; color: var(--ivory);
   border: 1px solid rgba(255,255,255,.2);
@@ -358,17 +307,13 @@ nav.scrolled { background: rgba(10,10,12,0.96); }
   letter-spacing: 0.22em; text-transform: uppercase;
   display: inline-flex; align-items: center; justify-content: center;
   height: 54px; width: 100%; max-width: 340px;
-  transition: all .3s; cursor: pointer;
-  text-decoration: none;
+  transition: all .3s; cursor: pointer; text-decoration: none;
 }
 .btn-ghost:hover { border-color: var(--ivory); }
-
-/* Hero stats */
 .hero-stats {
   display: grid; grid-template-columns: repeat(3, 1fr);
   gap: var(--space-sm);
-  margin-top: var(--space-lg);
-  padding-top: var(--space-lg);
+  margin-top: var(--space-lg); padding-top: var(--space-lg);
   border-top: 1px solid var(--white-border);
   width: 100%; max-width: min(600px, 100%);
   opacity: 0; animation: fadeUp .9s 1.2s forwards;
@@ -385,7 +330,6 @@ nav.scrolled { background: rgba(10,10,12,0.96); }
   text-transform: uppercase; color: var(--silver);
   margin-top: 5px; line-height: 1.3;
 }
-
 .scroll-hint {
   position: absolute; bottom: clamp(16px,4vw,28px); left: 50%;
   transform: translateX(-50%);
@@ -401,65 +345,41 @@ nav.scrolled { background: rgba(10,10,12,0.96); }
   0%,100% { opacity: .3; transform: scaleY(.6); transform-origin: top; }
   50% { opacity: 1; transform: scaleY(1); }
 }
-
 @keyframes fadeUp {
   from { opacity: 0; transform: translateY(28px); }
   to { opacity: 1; transform: translateY(0); }
 }
+
 /* ============================================
    WHATSAPP FLOATING WIDGET
 ============================================ */
 .whatsapp-float {
-  position: fixed;
-  bottom: 30px;
-  right: 30px;
-  width: 65px;
-  height: 65px;
-  background: #25D366;
-  color: white;
+  position: fixed; bottom: 30px; right: 30px;
+  width: 65px; height: 65px;
+  background: #25D366; color: white;
   border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  display: flex; align-items: center; justify-content: center;
   font-size: 30px;
-  box-shadow: 0 5px 20px rgba(37, 211, 102, 0.4);
-  z-index: 9999;
-  transition: all 0.3s ease;
-  text-decoration: none;
+  box-shadow: 0 5px 20px rgba(37,211,102,0.4);
+  z-index: 9999; transition: all 0.3s ease; text-decoration: none;
 }
-
-.whatsapp-float:hover {
-  transform: scale(1.12);
-  box-shadow: 0 8px 25px rgba(37, 211, 102, 0.6);
-}
-
+.whatsapp-float:hover { transform: scale(1.12); box-shadow: 0 8px 25px rgba(37,211,102,0.6); }
 .whatsapp-float::after {
-  content: '';
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  background: #25D366;
-  border-radius: 50%;
+  content: ''; position: absolute;
+  width: 100%; height: 100%;
+  background: #25D366; border-radius: 50%;
   animation: whatsapp-pulse 2.5s infinite;
-  opacity: 0.25;
-  z-index: -1;
+  opacity: 0.25; z-index: -1;
 }
-
 @keyframes whatsapp-pulse {
   0% { transform: scale(1); opacity: 0.3; }
   70% { transform: scale(1.5); opacity: 0; }
   100% { transform: scale(1.5); opacity: 0; }
 }
-
 @media (max-width: 768px) {
-  .whatsapp-float {
-    bottom: 20px;
-    right: 20px;
-    width: 58px;
-    height: 58px;
-    font-size: 27px;
-  }
+  .whatsapp-float { bottom: 20px; right: 20px; width: 58px; height: 58px; font-size: 27px; }
 }
+
 /* ============================================
    MARQUEE
 ============================================ */
@@ -469,7 +389,7 @@ nav.scrolled { background: rgba(10,10,12,0.96); }
 }
 .marquee-track {
   display: flex; width: max-content;
-  animation: marquee 28s linear infinite;
+  animation: marquee 32s linear infinite;
 }
 .marquee-item {
   font-size: var(--text-xs); letter-spacing: 0.28em;
@@ -486,15 +406,8 @@ nav.scrolled { background: rgba(10,10,12,0.96); }
 /* ============================================
    SHARED SECTION STYLES
 ============================================ */
-section {
-  padding: var(--space-xl) var(--space-md);
-  position: relative;
-}
-
-.section-inner {
-  max-width: min(1200px, 100%); margin: 0 auto;
-}
-
+section { padding: var(--space-xl) var(--space-md); position: relative; }
+.section-inner { max-width: min(1200px, 100%); margin: 0 auto; }
 .section-label {
   display: flex; align-items: center; gap: 10px;
   font-size: var(--text-xs); letter-spacing: 0.38em;
@@ -505,7 +418,6 @@ section {
   content: ''; width: clamp(20px,4vw,30px); height: 1px;
   background: var(--gold); flex-shrink: 0;
 }
-
 .section-title {
   font-family: var(--font-display);
   font-size: var(--text-2xl); font-weight: 300; line-height: 1.1;
@@ -525,33 +437,18 @@ section {
   background: radial-gradient(circle, rgba(201,168,76,0.05), transparent 70%);
   pointer-events: none;
 }
-
-.about-grid {
-  display: grid; gap: var(--space-xl);
-  align-items: center;
-}
-
+.about-grid { display: grid; gap: var(--space-xl); align-items: center; }
 .about-text p {
   color: var(--silver); line-height: 1.85;
-  font-size: var(--text-base); font-weight: 300;
-  margin-bottom: var(--space-sm);
+  font-size: var(--text-base); font-weight: 300; margin-bottom: var(--space-sm);
 }
-
-.about-tags {
-  display: flex; flex-wrap: wrap; gap: 8px; margin-top: var(--space-md);
-}
+.about-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: var(--space-md); }
 .tag {
   border: 1px solid var(--gold-border); color: var(--gold);
   font-size: var(--text-xs); letter-spacing: 0.15em;
-  text-transform: uppercase; padding: 7px 14px;
-  white-space: nowrap;
+  text-transform: uppercase; padding: 7px 14px; white-space: nowrap;
 }
-
-/* Elevator visual */
-.elevator-visual {
-  position: relative;
-  max-width: min(380px, 100%); margin: 0 auto;
-}
+.elevator-visual { position: relative; max-width: min(380px, 100%); margin: 0 auto; }
 .elevator-frame {
   aspect-ratio: 3/4; background: var(--iron);
   border: 1px solid var(--gold-border);
@@ -584,12 +481,9 @@ section {
   50% { transform: translateY(-18%); }
 }
 .elev-glow {
-  position: absolute; bottom: 0; left: 0; right: 0;
-  height: 30%;
+  position: absolute; bottom: 0; left: 0; right: 0; height: 30%;
   background: linear-gradient(0deg, rgba(201,168,76,0.06), transparent);
 }
-
-/* About metrics bar */
 .about-metrics {
   display: grid; grid-template-columns: repeat(3, 1fr);
   gap: 2px; margin-top: var(--space-md);
@@ -609,17 +503,63 @@ section {
 }
 
 /* ============================================
-   SERVICES
+   ELEVATOR TYPES
 ============================================ */
-.services { background: var(--obsidian); }
-
-.services-grid {
-  display: grid; gap: 2px;
-  margin-top: var(--space-lg);
+.elevator-types { background: var(--obsidian); }
+.elev-types-grid {
+  display: grid; gap: 2px; margin-top: var(--space-lg);
+}
+.elev-type-card {
+  background: var(--charcoal); padding: var(--space-md);
+  border: 1px solid var(--white-border);
+  position: relative; overflow: hidden;
+  transition: all .35s; cursor: pointer;
+}
+.elev-type-card::before {
+  content: ''; position: absolute; left: 0; top: 0; bottom: 0; width: 3px;
+  background: linear-gradient(180deg, var(--gold), var(--gold-light));
+  transform: scaleY(0); transform-origin: bottom; transition: transform .35s;
+}
+.elev-type-card:hover { background: var(--iron); transform: translateX(4px); }
+.elev-type-card:hover::before { transform: scaleY(1); }
+.elev-type-header {
+  display: flex; align-items: flex-start;
+  justify-content: space-between; margin-bottom: var(--space-sm); gap: 12px;
+}
+.elev-type-num {
+  font-family: var(--font-display);
+  font-size: clamp(36px,8vw,52px); font-weight: 300;
+  color: rgba(201,168,76,.1); line-height: 1;
+  transition: color .35s; flex-shrink: 0;
+}
+.elev-type-card:hover .elev-type-num { color: rgba(201,168,76,.22); }
+.elev-type-icon {
+  width: var(--touch-min); height: var(--touch-min);
+  border: 1px solid var(--gold-border);
+  display: flex; align-items: center; justify-content: center;
+  font-size: clamp(18px,4vw,22px); transition: all .35s; flex-shrink: 0;
+}
+.elev-type-card:hover .elev-type-icon { background: var(--gold-dim); border-color: var(--gold); }
+.elev-type-title {
+  font-family: var(--font-display); font-size: var(--text-lg);
+  font-weight: 400; margin-bottom: 8px; line-height: 1.3;
+}
+.elev-type-desc {
+  font-size: var(--text-sm); color: var(--silver); line-height: 1.75; font-weight: 300;
+}
+.elev-type-badge {
+  display: inline-block; margin-top: 12px;
+  font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase;
+  color: var(--gold); border: 1px solid var(--gold-border); padding: 4px 12px;
 }
 
+/* ============================================
+   SERVICES
+============================================ */
+.services { background: var(--charcoal); }
+.services-grid { display: grid; gap: 2px; margin-top: var(--space-lg); }
 .service-card {
-  background: var(--charcoal); padding: var(--space-md);
+  background: var(--iron); padding: var(--space-md);
   border: 1px solid var(--white-border);
   position: relative; overflow: hidden;
   transition: all .35s; cursor: pointer;
@@ -631,13 +571,11 @@ section {
   transform-origin: left; transition: transform .35s;
 }
 .service-card:hover,
-.service-card:focus-within { background: var(--iron); transform: translateY(-2px); }
+.service-card:focus-within { background: var(--steel); transform: translateY(-2px); }
 .service-card:hover::after { transform: scaleX(1); }
-
 .service-header {
   display: flex; align-items: flex-start;
-  justify-content: space-between; margin-bottom: var(--space-sm);
-  gap: 12px;
+  justify-content: space-between; margin-bottom: var(--space-sm); gap: 12px;
 }
 .service-num {
   font-family: var(--font-display);
@@ -650,38 +588,28 @@ section {
   width: var(--touch-min); height: var(--touch-min);
   border: 1px solid var(--gold-border);
   display: flex; align-items: center; justify-content: center;
-  font-size: clamp(18px,4vw,22px);
-  transition: all .35s; flex-shrink: 0;
+  font-size: clamp(18px,4vw,22px); transition: all .35s; flex-shrink: 0;
 }
-.service-card:hover .service-icon {
-  background: var(--gold-dim); border-color: var(--gold);
-}
-
+.service-card:hover .service-icon { background: var(--gold-dim); border-color: var(--gold); }
 .service-title {
   font-family: var(--font-display); font-size: var(--text-lg);
   font-weight: 400; margin-bottom: 10px; line-height: 1.3;
 }
-.service-desc {
-  font-size: var(--text-sm); color: var(--silver);
-  line-height: 1.75; font-weight: 300;
-}
+.service-desc { font-size: var(--text-sm); color: var(--silver); line-height: 1.75; font-weight: 300; }
 .service-link {
   margin-top: var(--space-sm);
   display: inline-flex; align-items: center; gap: 8px;
   font-size: var(--text-xs); letter-spacing: 0.2em;
   text-transform: uppercase; color: var(--gold);
-  opacity: 0; transition: opacity .3s;
-  min-height: var(--touch-min);
+  opacity: 0; transition: opacity .3s; min-height: var(--touch-min);
 }
 .service-card:hover .service-link { opacity: 1; }
 
 /* ============================================
-   TECHNOLOGY / DIFFERENTIATOR
+   TECHNOLOGY
 ============================================ */
-.technology { background: var(--charcoal); }
-
+.technology { background: var(--obsidian); }
 .tech-grid { display: grid; gap: var(--space-xl); margin-top: var(--space-lg); }
-
 .tech-features { display: flex; flex-direction: column; }
 .tech-feature {
   display: grid; grid-template-columns: var(--touch-min) 1fr;
@@ -698,23 +626,12 @@ section {
   font-family: var(--font-display); font-size: 15px; color: var(--gold);
   flex-shrink: 0; transition: all .3s;
 }
-.tech-feature:hover .tech-feature-marker {
-  background: var(--gold); color: var(--obsidian);
-}
-.tech-feature h4 {
-  font-family: var(--font-display); font-size: var(--text-lg);
-  font-weight: 400; margin-bottom: 8px;
-}
-.tech-feature p {
-  font-size: var(--text-sm); color: var(--silver);
-  line-height: 1.75; font-weight: 300;
-}
-
-/* Highlight card */
+.tech-feature:hover .tech-feature-marker { background: var(--gold); color: var(--obsidian); }
+.tech-feature h4 { font-family: var(--font-display); font-size: var(--text-lg); font-weight: 400; margin-bottom: 8px; }
+.tech-feature p { font-size: var(--text-sm); color: var(--silver); line-height: 1.75; font-weight: 300; }
 .tech-highlight {
   background: var(--iron); border: 1px solid var(--gold-border);
-  padding: var(--space-lg) var(--space-md);
-  text-align: center;
+  padding: var(--space-lg) var(--space-md); text-align: center;
 }
 .tech-highlight-num {
   font-family: var(--font-display);
@@ -726,14 +643,85 @@ section {
   line-height: 1.8; font-weight: 300; margin-bottom: var(--space-md);
   max-width: 400px; margin-left: auto; margin-right: auto;
 }
-.badge-grid {
-  display: flex; flex-wrap: wrap; justify-content: center; gap: 8px;
-}
+.badge-grid { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; }
 .badge {
   border: 1px solid var(--gold); color: var(--gold);
   font-size: var(--text-xs); letter-spacing: 0.25em;
   text-transform: uppercase; padding: 7px 14px; white-space: nowrap;
 }
+
+/* ============================================
+   LOCATIONS
+============================================ */
+.locations { background: var(--charcoal); position: relative; overflow: hidden; }
+.locations::before {
+  content: '';
+  position: absolute; inset: 0;
+  background-image:
+    linear-gradient(rgba(201,168,76,0.025) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(201,168,76,0.025) 1px, transparent 1px);
+  background-size: clamp(40px,8vw,60px) clamp(40px,8vw,60px);
+  mask-image: radial-gradient(ellipse 90% 90% at 50% 50%, black, transparent);
+  pointer-events: none;
+}
+.locations-header { margin-bottom: var(--space-lg); }
+.locations-grid { display: grid; gap: 2px; }
+.location-card {
+  background: var(--iron); border: 1px solid var(--white-border);
+  padding: var(--space-lg) var(--space-md);
+  position: relative; overflow: hidden; transition: all .4s;
+}
+.location-card::before {
+  content: '';
+  position: absolute; top: 0; left: 0; right: 0; height: 3px;
+  background: linear-gradient(90deg, var(--gold), var(--gold-light));
+  transform: scaleX(0); transform-origin: left; transition: transform .4s;
+}
+.location-card:hover { background: var(--steel); }
+.location-card:hover::before { transform: scaleX(1); }
+.location-flag { font-size: clamp(36px,8vw,52px); margin-bottom: var(--space-sm); line-height: 1; display: block; }
+.location-country {
+  font-family: var(--font-display);
+  font-size: var(--text-2xl); font-weight: 300;
+  line-height: 1; margin-bottom: 6px; letter-spacing: -0.01em;
+}
+.location-country em { font-style: italic; color: var(--gold); }
+.location-role {
+  font-size: var(--text-xs); letter-spacing: 0.3em;
+  text-transform: uppercase; color: var(--gold);
+  margin-bottom: var(--space-md);
+  display: flex; align-items: center; gap: 8px;
+}
+.location-role::before { content: ''; width: 20px; height: 1px; background: var(--gold); opacity: .5; }
+.location-divider { width: 100%; height: 1px; background: var(--white-border); margin: var(--space-md) 0; }
+.location-details { display: flex; flex-direction: column; gap: 14px; }
+.location-detail { display: flex; align-items: center; gap: 14px; min-height: 40px; }
+.location-detail-icon {
+  width: 34px; height: 34px; flex-shrink: 0;
+  border: 1px solid var(--gold-border);
+  display: flex; align-items: center; justify-content: center; font-size: 13px;
+}
+.location-detail-text { font-size: var(--text-sm); color: var(--silver); font-weight: 300; line-height: 1.4; }
+.location-detail-text strong {
+  color: var(--ivory); font-weight: 400; display: block;
+  font-size: var(--text-xs); letter-spacing: 0.1em;
+  text-transform: uppercase; margin-bottom: 2px;
+}
+.location-contact-name {
+  font-size: var(--text-sm); color: var(--gold);
+  font-weight: 400; margin-bottom: 3px;
+  font-family: var(--font-display); font-style: italic;
+}
+.location-cta {
+  margin-top: var(--space-md);
+  display: inline-flex; align-items: center; gap: 10px;
+  font-size: var(--text-xs); letter-spacing: 0.2em;
+  text-transform: uppercase; color: var(--gold);
+  border-bottom: 1px solid var(--gold-border);
+  padding-bottom: 4px; transition: gap .3s, border-color .3s;
+  text-decoration: none; min-height: var(--touch-min);
+}
+.location-cta:hover { gap: 16px; border-color: var(--gold); }
 
 /* ============================================
    CONTACT / LEAD FORM
@@ -747,73 +735,49 @@ section {
   background: radial-gradient(circle, rgba(201,168,76,0.04), transparent 70%);
   pointer-events: none;
 }
-
 .contact-grid { display: grid; gap: var(--space-xl); margin-top: var(--space-lg); }
-
 .contact-info-block h3 {
-  font-family: var(--font-display);
-  font-size: var(--text-2xl); font-weight: 300; line-height: 1.2;
-  margin-bottom: var(--space-md);
+  font-family: var(--font-display); font-size: var(--text-2xl);
+  font-weight: 300; line-height: 1.2; margin-bottom: var(--space-md);
 }
 .contact-info-block h3 em { font-style: italic; color: var(--gold); }
 .contact-info-block > p {
   font-size: var(--text-sm); color: var(--silver);
   line-height: 1.85; font-weight: 300; margin-bottom: var(--space-md);
 }
-
 .contact-details { display: flex; flex-direction: column; gap: 16px; }
-.contact-row {
-  display: flex; align-items: center; gap: 14px;
-  min-height: var(--touch-min);
-}
+.contact-row { display: flex; align-items: center; gap: 14px; min-height: var(--touch-min); }
 .contact-icon-box {
   width: 38px; height: 38px; flex-shrink: 0;
   border: 1px solid var(--gold-border);
   display: flex; align-items: center; justify-content: center;
   font-size: 15px; color: var(--gold);
 }
-.contact-row-text {
-  font-size: var(--text-sm); color: var(--silver); font-weight: 300;
-}
-
-/* Form */
+.contact-row-text { font-size: var(--text-sm); color: var(--silver); font-weight: 300; }
 .lead-form { display: flex; flex-direction: column; gap: 14px; }
-
 .form-row-2 { display: grid; gap: 14px; }
-
 .form-field { display: flex; flex-direction: column; gap: 7px; }
-.form-field label {
-  font-size: 10px; letter-spacing: 0.28em;
-  text-transform: uppercase; color: var(--silver);
-}
+.form-field label { font-size: 10px; letter-spacing: 0.28em; text-transform: uppercase; color: var(--silver); }
 .form-field input,
 .form-field select,
 .form-field textarea {
-  background: var(--iron);
-  border: 1px solid rgba(255,255,255,.08);
+  background: var(--iron); border: 1px solid rgba(255,255,255,.08);
   color: var(--ivory); font-family: var(--font-body);
   font-size: var(--text-base); font-weight: 300;
   padding: 0 16px; height: 52px;
   outline: none; transition: border-color .3s;
-  -webkit-appearance: none; border-radius: 0;
-  width: 100%;
+  -webkit-appearance: none; border-radius: 0; width: 100%;
 }
 .form-field select { cursor: pointer; }
 .form-field select option { background: var(--iron); color: var(--ivory); }
-.form-field textarea {
-  height: 120px; padding: 14px 16px; resize: none;
-}
+.form-field textarea { height: 120px; padding: 14px 16px; resize: none; }
 .form-field input:focus,
 .form-field select:focus,
 .form-field textarea:focus { border-color: var(--gold); }
-
-/* Larger touch targets for inputs on mobile */
 @media (max-width: 768px) {
-  .form-field input,
-  .form-field select { height: 56px; font-size: 16px; /* prevent zoom on iOS */ }
+  .form-field input, .form-field select { height: 56px; font-size: 16px; }
   .form-field textarea { font-size: 16px; }
 }
-
 .form-submit {
   background: var(--gold); color: var(--obsidian);
   border: none; height: 56px; width: 100%;
@@ -828,121 +792,7 @@ section {
 }
 .form-submit:hover::before { transform: translateX(0); }
 .form-submit span { position: relative; z-index: 1; }
-.form-note {
-  font-size: 11px; color: var(--steel);
-  text-align: center; letter-spacing: 0.05em;
-}
-
-/* ============================================
-   LOCATIONS
-============================================ */
-.locations {
-  background: var(--obsidian);
-  position: relative; overflow: hidden;
-}
-.locations::before {
-  content: '';
-  position: absolute; inset: 0;
-  background-image:
-    linear-gradient(rgba(201,168,76,0.025) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(201,168,76,0.025) 1px, transparent 1px);
-  background-size: clamp(40px,8vw,60px) clamp(40px,8vw,60px);
-  mask-image: radial-gradient(ellipse 90% 90% at 50% 50%, black, transparent);
-  pointer-events: none;
-}
-
-.locations-header { margin-bottom: var(--space-lg); }
-
-.locations-grid {
-  display: grid; gap: 2px;
-}
-
-.location-card {
-  background: var(--charcoal);
-  border: 1px solid var(--white-border);
-  padding: var(--space-lg) var(--space-md);
-  position: relative; overflow: hidden;
-  transition: all .4s;
-}
-.location-card::before {
-  content: '';
-  position: absolute; top: 0; left: 0; right: 0; height: 3px;
-  background: linear-gradient(90deg, var(--gold), var(--gold-light));
-  transform: scaleX(0); transform-origin: left;
-  transition: transform .4s;
-}
-.location-card:hover { background: var(--iron); }
-.location-card:hover::before { transform: scaleX(1); }
-
-.location-flag {
-  font-size: clamp(36px, 8vw, 52px);
-  margin-bottom: var(--space-sm);
-  line-height: 1;
-  display: block;
-}
-
-.location-country {
-  font-family: var(--font-display);
-  font-size: var(--text-2xl); font-weight: 300;
-  line-height: 1; margin-bottom: 6px;
-  letter-spacing: -0.01em;
-}
-.location-country em { font-style: italic; color: var(--gold); }
-
-.location-role {
-  font-size: var(--text-xs); letter-spacing: 0.3em;
-  text-transform: uppercase; color: var(--gold);
-  margin-bottom: var(--space-md);
-  display: flex; align-items: center; gap: 8px;
-}
-.location-role::before {
-  content: ''; width: 20px; height: 1px; background: var(--gold); opacity: .5;
-}
-
-.location-divider {
-  width: 100%; height: 1px;
-  background: var(--white-border);
-  margin: var(--space-md) 0;
-}
-
-.location-details {
-  display: flex; flex-direction: column; gap: 14px;
-}
-.location-detail {
-  display: flex; align-items: center; gap: 14px;
-  min-height: 40px;
-}
-.location-detail-icon {
-  width: 34px; height: 34px; flex-shrink: 0;
-  border: 1px solid var(--gold-border);
-  display: flex; align-items: center; justify-content: center;
-  font-size: 13px;
-}
-.location-detail-text {
-  font-size: var(--text-sm); color: var(--silver); font-weight: 300;
-  line-height: 1.4;
-}
-.location-detail-text strong {
-  color: var(--ivory); font-weight: 400; display: block;
-  font-size: var(--text-xs); letter-spacing: 0.1em;
-  text-transform: uppercase; margin-bottom: 2px;
-}
-
-.location-cta {
-  margin-top: var(--space-md);
-  display: inline-flex; align-items: center; gap: 10px;
-  font-size: var(--text-xs); letter-spacing: 0.2em;
-  text-transform: uppercase; color: var(--gold);
-  border-bottom: 1px solid var(--gold-border);
-  padding-bottom: 4px; transition: gap .3s, border-color .3s;
-  text-decoration: none; min-height: var(--touch-min);
-}
-.location-cta:hover { gap: 16px; border-color: var(--gold); }
-
-/* Responsive */
-@media (min-width: 768px) {
-  .locations-grid { grid-template-columns: 1fr 1fr; }
-}
+.form-note { font-size: 11px; color: var(--steel); text-align: center; letter-spacing: 0.05em; }
 
 /* ============================================
    FOOTER
@@ -952,51 +802,36 @@ footer {
   border-top: 1px solid var(--white-border);
   padding: var(--space-xl) var(--space-md) var(--space-md);
 }
-
 .footer-inner { max-width: min(1200px, 100%); margin: 0 auto; }
-
-.footer-top {
-  display: grid; gap: var(--space-lg);
-  margin-bottom: var(--space-lg);
-}
+.footer-top { display: grid; gap: var(--space-lg); margin-bottom: var(--space-lg); }
 .footer-brand-desc {
   font-size: var(--text-sm); color: var(--silver);
   line-height: 1.75; font-weight: 300;
-  margin-top: var(--space-sm);
-  max-width: 320px;
+  margin-top: var(--space-sm); max-width: 320px;
 }
 .footer-col h5 {
   font-size: 10px; letter-spacing: 0.32em;
-  text-transform: uppercase; color: var(--gold);
-  margin-bottom: var(--space-sm);
+  text-transform: uppercase; color: var(--gold); margin-bottom: var(--space-sm);
 }
 .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 10px; }
 .footer-col ul li a {
-  font-size: var(--text-sm); color: var(--silver);
-  transition: color .3s; min-height: var(--touch-min);
-  display: flex; align-items: center;
+  font-size: var(--text-sm); color: var(--silver); transition: color .3s;
+  min-height: var(--touch-min); display: flex; align-items: center;
 }
 .footer-col ul li a:hover { color: var(--ivory); }
-
 .footer-links-grid { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-md); }
-
 .footer-divider { height: 1px; background: var(--white-border); margin-bottom: var(--space-md); }
 .footer-bottom {
   display: flex; flex-direction: column; gap: 8px;
   align-items: center; text-align: center;
 }
-.footer-bottom p {
-  font-size: 12px; color: var(--steel); letter-spacing: 0.05em;
-}
+.footer-bottom p { font-size: 12px; color: var(--steel); letter-spacing: 0.05em; }
 .footer-bottom span { color: var(--gold); }
 
 /* ============================================
    SCROLL REVEAL
 ============================================ */
-.reveal {
-  opacity: 0; transform: translateY(36px);
-  transition: opacity .75s ease, transform .75s ease;
-}
+.reveal { opacity: 0; transform: translateY(36px); transition: opacity .75s ease, transform .75s ease; }
 .reveal.visible { opacity: 1; transform: translateY(0); }
 .reveal-d1 { transition-delay: .1s; }
 .reveal-d2 { transition-delay: .2s; }
@@ -1004,48 +839,70 @@ footer {
 .reveal-d4 { transition-delay: .4s; }
 
 /* ============================================
-   TOAST NOTIFICATION
+   TOAST
 ============================================ */
 .toast {
   position: fixed; bottom: clamp(16px,4vw,32px);
   left: var(--space-md); right: var(--space-md);
   background: var(--gold); color: var(--obsidian);
-  padding: 16px 24px;
-  font-size: var(--text-sm); font-weight: 500;
+  padding: 16px 24px; font-size: var(--text-sm); font-weight: 500;
   letter-spacing: 0.05em; z-index: 9999;
   transform: translateY(120%); transition: transform .4s cubic-bezier(.77,0,.18,1);
   display: flex; align-items: center; gap: 12px;
-  max-width: min(480px, calc(100% - 2 * var(--space-md)));
-  margin: 0 auto;
+  max-width: min(480px, calc(100% - 2 * var(--space-md))); margin: 0 auto;
 }
 .toast.show { transform: translateY(0); }
 
+/* ============================================
+   RESPONSIVE
+============================================ */
+@media (min-width: 600px) {
+  .hero-actions { flex-direction: row; justify-content: center; }
+  .btn-primary, .btn-ghost { width: auto; }
+  .form-row-2 { grid-template-columns: 1fr 1fr; }
+  .footer-links-grid { grid-template-columns: repeat(3, 1fr); }
+}
+@media (min-width: 768px) {
+  nav { height: 68px; padding: 0 clamp(32px,5vw,60px); }
+  .hamburger { display: none; }
+  .nav-links { display: flex; }
+  .nav-cta { display: inline-flex; }
+  .mobile-menu { display: none !important; }
+  .locations-grid { grid-template-columns: repeat(3, 1fr); }
+  .elev-types-grid { grid-template-columns: 1fr 1fr; }
+  .services-grid { grid-template-columns: 1fr 1fr; }
+}
+@media (min-width: 1024px) {
+  .about-grid { grid-template-columns: 1fr 1fr; gap: 80px; }
+  .tech-grid { grid-template-columns: 1fr 1fr; }
+  .tech-highlight { position: sticky; top: 100px; }
+  .contact-grid { grid-template-columns: 1fr 1fr; gap: 80px; }
+  .services-grid { grid-template-columns: repeat(3, 1fr); }
+  .elev-types-grid { grid-template-columns: repeat(3, 1fr); }
+  .footer-top { grid-template-columns: 2fr 1fr 1fr 1fr; }
+  .footer-links-grid { display: contents; }
+}
 </style>
 </head>
 <body>
 
-<!-- Cursor (desktop only) -->
 <div class="cursor" id="cursor"></div>
 <div class="cursor-ring" id="cursorRing"></div>
-
-<!-- Toast -->
 <div class="toast" id="toast">✓ &nbsp;Message sent! We'll be in touch shortly.</div>
 
 <!-- ============ NAV ============ -->
 <nav id="mainNav">
   <a href="#" class="nav-logo" aria-label="Advanced Point Home">
     <span class="nav-logo-main">Advanced Point</span>
-    <span class="nav-logo-sub">PVT Ltd — Kenya &amp; Nigeria</span>
+    <span class="nav-logo-sub">PVT Ltd</span>
   </a>
-
   <ul class="nav-links" role="navigation" aria-label="Main navigation">
     <li><a href="#about">About</a></li>
+    <li><a href="#elevator-types">Elevators</a></li>
     <li><a href="#services">Services</a></li>
     <li><a href="#technology">Technology</a></li>
-    <li><a href="#locations">Locations</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
-
   <div class="nav-right">
     <a href="#contact" class="nav-cta">Get a Quote</a>
     <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
@@ -1058,11 +915,11 @@ footer {
 <div class="mobile-menu" id="mobileMenu" role="dialog" aria-label="Mobile navigation">
   <a href="#about" class="mobile-nav-link">About</a>
   <div class="mobile-menu-line"></div>
+  <a href="#elevator-types" class="mobile-nav-link">Elevators</a>
+  <div class="mobile-menu-line"></div>
   <a href="#services" class="mobile-nav-link">Services</a>
   <div class="mobile-menu-line"></div>
   <a href="#technology" class="mobile-nav-link">Technology</a>
-  <div class="mobile-menu-line"></div>
-  <a href="#locations" class="mobile-nav-link">Locations</a>
   <div class="mobile-menu-line"></div>
   <a href="#contact" class="mobile-nav-link">Contact</a>
   <button class="mobile-menu-cta mobile-nav-link">Get a Free Quote</button>
@@ -1078,7 +935,6 @@ footer {
     <div class="shaft-car"></div>
     <div class="shaft-car"></div>
   </div>
-
   <div class="hero-content">
     <div class="hero-eyebrow">Futuristic Elevator Engineering</div>
     <h1 class="hero-title">
@@ -1086,11 +942,11 @@ footer {
       <em>Every Standard</em>
     </h1>
     <p class="hero-sub">
-      Revolutionary air-powered elevators engineered for safety, durability, and peace of mind. Built for families. Built to last.
+      Full-spectrum elevator solutions across Africa — traction, hydraulic, vacuum, stairlift and more. Engineered for safety, built to last.
     </p>
     <div class="hero-actions">
       <a href="#contact" class="btn-primary"><span>Request a Consultation</span></a>
-      <a href="#services" class="btn-ghost">Explore Services</a>
+      <a href="#elevator-types" class="btn-ghost">Explore Elevator Types</a>
     </div>
     <div class="hero-stats">
       <div class="stat">
@@ -1099,11 +955,11 @@ footer {
       </div>
       <div class="stat">
         <div class="stat-num">6+</div>
-        <div class="stat-label">Core Services</div>
+        <div class="stat-label">Elevator Types</div>
       </div>
       <div class="stat">
-        <div class="stat-num">24/7</div>
-        <div class="stat-label">Support</div>
+        <div class="stat-num">3</div>
+        <div class="stat-label">Countries</div>
       </div>
     </div>
   </div>
@@ -1115,22 +971,22 @@ footer {
 <!-- ============ MARQUEE ============ -->
 <div class="marquee-wrap" aria-hidden="true">
   <div class="marquee-track">
+    <span class="marquee-item">Traction Elevators <span class="marquee-dot">◆</span></span>
+    <span class="marquee-item">Hydraulic Elevators <span class="marquee-dot">◆</span></span>
+    <span class="marquee-item">Vacuum / Pneumatic <span class="marquee-dot">◆</span></span>
+    <span class="marquee-item">Stairlifts <span class="marquee-dot">◆</span></span>
     <span class="marquee-item">Installations & Repairs <span class="marquee-dot">◆</span></span>
-    <span class="marquee-item">Procurement & Shipment <span class="marquee-dot">◆</span></span>
     <span class="marquee-item">Project Management <span class="marquee-dot">◆</span></span>
-    <span class="marquee-item">Property Management <span class="marquee-dot">◆</span></span>
     <span class="marquee-item">Training & Certification <span class="marquee-dot">◆</span></span>
-    <span class="marquee-item">Air-Powered Technology <span class="marquee-dot">◆</span></span>
-    <span class="marquee-item">Residential Safety <span class="marquee-dot">◆</span></span>
-    <span class="marquee-item">General Merchandise <span class="marquee-dot">◆</span></span>
+    <span class="marquee-item">Nigeria · Kenya · Ghana <span class="marquee-dot">◆</span></span>
+    <span class="marquee-item">Traction Elevators <span class="marquee-dot">◆</span></span>
+    <span class="marquee-item">Hydraulic Elevators <span class="marquee-dot">◆</span></span>
+    <span class="marquee-item">Vacuum / Pneumatic <span class="marquee-dot">◆</span></span>
+    <span class="marquee-item">Stairlifts <span class="marquee-dot">◆</span></span>
     <span class="marquee-item">Installations & Repairs <span class="marquee-dot">◆</span></span>
-    <span class="marquee-item">Procurement & Shipment <span class="marquee-dot">◆</span></span>
     <span class="marquee-item">Project Management <span class="marquee-dot">◆</span></span>
-    <span class="marquee-item">Property Management <span class="marquee-dot">◆</span></span>
     <span class="marquee-item">Training & Certification <span class="marquee-dot">◆</span></span>
-    <span class="marquee-item">Air-Powered Technology <span class="marquee-dot">◆</span></span>
-    <span class="marquee-item">Residential Safety <span class="marquee-dot">◆</span></span>
-    <span class="marquee-item">General Merchandise <span class="marquee-dot">◆</span></span>
+    <span class="marquee-item">Nigeria · Kenya · Ghana <span class="marquee-dot">◆</span></span>
   </div>
 </div>
 
@@ -1142,14 +998,14 @@ footer {
         <div class="section-label reveal">Who We Are</div>
         <h2 class="section-title reveal">Engineering the <em>Future</em> of Vertical Movement</h2>
         <p class="reveal">Advanced Point PVT Ltd is a partnership company specializing in futuristic engineering services within the elevator industry. We utilize state-of-the-art manufacturing techniques and revolutionary materials to redefine safety and durability standards.</p>
-        <p class="reveal reveal-d1">Our commitment guarantees unparalleled sturdiness, elevating safety to new heights while surpassing industry norms. We have engineered an elevator specifically tailored for private residences, prioritizing the safety of children and seniors.</p>
-        <p class="reveal reveal-d2">Our cutting-edge technology operates on <strong style="color:var(--ivory);font-weight:500">air power</strong>, ensuring reliability even during power outages — delivering absolute peace of mind to every customer and their loved ones.</p>
+        <p class="reveal reveal-d1">Our commitment guarantees unparalleled sturdiness, elevating safety to new heights while surpassing industry norms. We work across the full spectrum of elevator technology — from residential air-powered units to heavy-duty commercial traction systems.</p>
+        <p class="reveal reveal-d2">With offices in <strong style="color:var(--ivory);font-weight:500">Nigeria, Kenya and Ghana</strong>, we are building Africa's most trusted elevator engineering network — delivering world-class solutions to homes, businesses and institutions.</p>
         <div class="about-tags reveal reveal-d3">
-          <span class="tag">Air-Powered</span>
+          <span class="tag">All Elevator Types</span>
           <span class="tag">Child-Safe</span>
           <span class="tag">Senior-Friendly</span>
           <span class="tag">New & Existing Builds</span>
-          <span class="tag">Lightweight Structures</span>
+          <span class="tag">Pan-African</span>
         </div>
         <div class="about-metrics reveal reveal-d4">
           <div class="metric">
@@ -1157,16 +1013,15 @@ footer {
             <div class="metric-desc">Safety Rate</div>
           </div>
           <div class="metric">
-            <div class="metric-val">24/7</div>
-            <div class="metric-desc">Availability</div>
+            <div class="metric-val">3</div>
+            <div class="metric-desc">Countries</div>
           </div>
           <div class="metric">
-            <div class="metric-val">Zero</div>
-            <div class="metric-desc">Compromise</div>
+            <div class="metric-val">24/7</div>
+            <div class="metric-desc">Support</div>
           </div>
         </div>
       </div>
-
       <div class="elevator-visual reveal reveal-d2">
         <div class="elevator-frame">
           <div class="elev-shaft-l"></div>
@@ -1179,12 +1034,85 @@ footer {
   </div>
 </section>
 
+<!-- ============ ELEVATOR TYPES ============ -->
+<section class="elevator-types" id="elevator-types">
+  <div class="section-inner">
+    <div class="section-label reveal">Elevator Technology</div>
+    <h2 class="section-title reveal">Every Type. <em>Every Building.</em></h2>
+    <p class="reveal" style="color:var(--silver);font-size:var(--text-base);font-weight:300;line-height:1.85;max-width:580px;margin-bottom:0">
+      We are not limited to one technology. Advanced Point supplies, installs and maintains the full range of modern elevator systems — matching the right solution to every building, budget and requirement.
+    </p>
+    <div class="elev-types-grid">
+
+      <div class="elev-type-card reveal reveal-d1">
+        <div class="elev-type-header">
+          <div class="elev-type-num">01</div>
+          <div class="elev-type-icon">⚙️</div>
+        </div>
+        <h3 class="elev-type-title">Traction Elevators</h3>
+        <p class="elev-type-desc">The gold standard for mid-to-high-rise buildings. Electric motor-driven with steel ropes and a counterweight system — offering smooth, fast and energy-efficient vertical travel for offices, hotels and residential towers.</p>
+        <span class="elev-type-badge">Commercial & High-Rise</span>
+      </div>
+
+      <div class="elev-type-card reveal reveal-d2">
+        <div class="elev-type-header">
+          <div class="elev-type-num">02</div>
+          <div class="elev-type-icon">💧</div>
+        </div>
+        <h3 class="elev-type-title">Hydraulic Elevators</h3>
+        <p class="elev-type-desc">Powered by a hydraulic piston system, these are ideal for low-to-mid-rise buildings where a machine room is available. Known for their reliability, smooth ride and cost-effective installation in commercial and residential settings.</p>
+        <span class="elev-type-badge">Low-to-Mid Rise</span>
+      </div>
+
+      <div class="elev-type-card reveal reveal-d3">
+        <div class="elev-type-header">
+          <div class="elev-type-num">03</div>
+          <div class="elev-type-icon">🌀</div>
+        </div>
+        <h3 class="elev-type-title">Vacuum / Pneumatic Elevators</h3>
+        <p class="elev-type-desc">Our signature air-powered technology. Operates on air pressure differentials with no cables, pulleys or pistons — making it perfect for private residences. Functions reliably during power outages, is self-supporting, and requires minimal structural modification.</p>
+        <span class="elev-type-badge">Residential & Power-Free</span>
+      </div>
+
+      <div class="elev-type-card reveal reveal-d1">
+        <div class="elev-type-header">
+          <div class="elev-type-num">04</div>
+          <div class="elev-type-icon">🪜</div>
+        </div>
+        <h3 class="elev-type-title">Stairlifts</h3>
+        <p class="elev-type-desc">A safe and affordable mobility solution for seniors, children and people with limited mobility. Stairlifts are fitted directly onto existing staircases — straight or curved — enabling independent movement across floors without structural changes to the building.</p>
+        <span class="elev-type-badge">Accessibility & Mobility</span>
+      </div>
+
+      <div class="elev-type-card reveal reveal-d2">
+        <div class="elev-type-header">
+          <div class="elev-type-num">05</div>
+          <div class="elev-type-icon">🏗️</div>
+        </div>
+        <h3 class="elev-type-title">Machine Room-Less (MRL)</h3>
+        <p class="elev-type-desc">A modern evolution of the traction elevator that eliminates the need for a separate machine room. The drive is housed within the shaft itself — saving space, reducing construction cost and maintaining high performance for mid-rise buildings.</p>
+        <span class="elev-type-badge">Space-Saving Mid-Rise</span>
+      </div>
+
+      <div class="elev-type-card reveal reveal-d3">
+        <div class="elev-type-header">
+          <div class="elev-type-num">06</div>
+          <div class="elev-type-icon">♿</div>
+        </div>
+        <h3 class="elev-type-title">Platform Lifts & Dumbwaiters</h3>
+        <p class="elev-type-desc">Platform lifts provide wheelchair and disabled access across short vertical distances without a full elevator shaft. Dumbwaiters serve commercial kitchens, hospitals and warehouses for the efficient transport of goods between floors.</p>
+        <span class="elev-type-badge">Access & Goods Movement</span>
+      </div>
+
+    </div>
+  </div>
+</section>
+
 <!-- ============ SERVICES ============ -->
 <section class="services" id="services">
   <div class="section-inner">
     <div class="section-label reveal">What We Do</div>
-    <h2 class="section-title reveal">Complete <em>Elevator</em> Solutions</h2>
-
+    <h2 class="section-title reveal">Complete <em>Engineering</em> Services</h2>
     <div class="services-grid">
       <div class="service-card reveal reveal-d1">
         <div class="service-header">
@@ -1192,7 +1120,7 @@ footer {
           <div class="service-icon">🔧</div>
         </div>
         <h3 class="service-title">Installations, Repairs & Maintenance</h3>
-        <p class="service-desc">Professional installation of new elevators and comprehensive repair and maintenance services to keep your system operating at peak performance with guaranteed uptime.</p>
+        <p class="service-desc">Professional installation of all elevator types and comprehensive repair and maintenance services — keeping every system operating at peak performance with guaranteed uptime across all our markets.</p>
         <a href="#contact" class="service-link">Enquire Now →</a>
       </div>
       <div class="service-card reveal reveal-d2">
@@ -1201,7 +1129,7 @@ footer {
           <div class="service-icon">📦</div>
         </div>
         <h3 class="service-title">Procurement & Shipment Services</h3>
-        <p class="service-desc">End-to-end sourcing and logistics for elevator components and systems. We manage global supply chains to deliver quality parts on time and within budget.</p>
+        <p class="service-desc">End-to-end sourcing and logistics for elevator components and systems. We manage global supply chains to deliver quality parts on time and within budget to Nigeria, Kenya and Ghana.</p>
         <a href="#contact" class="service-link">Enquire Now →</a>
       </div>
       <div class="service-card reveal reveal-d3">
@@ -1210,7 +1138,7 @@ footer {
           <div class="service-icon">📋</div>
         </div>
         <h3 class="service-title">Project Management</h3>
-        <p class="service-desc">Full-cycle project management from concept to commissioning. Our experienced team ensures every project is delivered on schedule with strict quality control.</p>
+        <p class="service-desc">Full-cycle project management from concept to commissioning. Our experienced team ensures every project is delivered on schedule with strict quality control and transparent reporting.</p>
         <a href="#contact" class="service-link">Enquire Now →</a>
       </div>
       <div class="service-card reveal reveal-d1">
@@ -1219,7 +1147,7 @@ footer {
           <div class="service-icon">🏢</div>
         </div>
         <h3 class="service-title">Property Management & Real Estate</h3>
-        <p class="service-desc">Integrated property management solutions that enhance building value through superior vertical transportation systems and ongoing facility management support.</p>
+        <p class="service-desc">Integrated property management solutions that enhance building value through superior vertical transportation systems and ongoing facility management support for developers and landlords.</p>
         <a href="#contact" class="service-link">Enquire Now →</a>
       </div>
       <div class="service-card reveal reveal-d2">
@@ -1228,7 +1156,7 @@ footer {
           <div class="service-icon">🏪</div>
         </div>
         <h3 class="service-title">General Merchandise</h3>
-        <p class="service-desc">A curated range of high-quality goods and materials supporting our engineering operations and customer needs, delivered with the same commitment to excellence.</p>
+        <p class="service-desc">A curated range of high-quality goods and materials supporting our engineering operations and customer needs, delivered with the same commitment to excellence across all our locations.</p>
         <a href="#contact" class="service-link">Enquire Now →</a>
       </div>
       <div class="service-card reveal reveal-d3">
@@ -1237,7 +1165,7 @@ footer {
           <div class="service-icon">🎓</div>
         </div>
         <h3 class="service-title">Training & Certification</h3>
-        <p class="service-desc">Industry-accredited training programs for elevator technicians, operators, and safety inspectors. Build competence and earn certifications that meet global standards.</p>
+        <p class="service-desc">Industry-accredited training programs for elevator technicians, operators, and safety inspectors covering all elevator types. Build competence and earn certifications that meet global standards.</p>
         <a href="#contact" class="service-link">Enquire Now →</a>
       </div>
     </div>
@@ -1254,42 +1182,41 @@ footer {
         <div class="tech-feature reveal">
           <div class="tech-feature-marker">01</div>
           <div>
-            <h4>Air-Powered Reliability</h4>
-            <p>Our pneumatic elevator technology operates entirely on air pressure, eliminating dependence on electrical grids. Continues functioning flawlessly during power outages — your family is never stranded.</p>
+            <h4>Full-Spectrum Capability</h4>
+            <p>From air-powered residential units to heavy-duty commercial traction systems, we supply and service every elevator type. No project is too complex or too simple — one trusted partner for all your vertical mobility needs.</p>
           </div>
         </div>
         <div class="tech-feature reveal reveal-d1">
           <div class="tech-feature-marker">02</div>
           <div>
             <h4>Child & Senior Safety Design</h4>
-            <p>Every element is engineered with the most vulnerable users in mind. Soft-close mechanisms, sensor-based obstruction detection, and intuitive controls make our elevators the safest choice for family homes.</p>
+            <p>Every installation is engineered with the most vulnerable users in mind. Soft-close mechanisms, sensor-based obstruction detection, and intuitive controls make our systems the safest choice for family homes and care facilities.</p>
           </div>
         </div>
         <div class="tech-feature reveal reveal-d2">
           <div class="tech-feature-marker">03</div>
           <div>
             <h4>Lightweight Modular Structures</h4>
-            <p>Our innovative structures integrate seamlessly into both existing and new buildings — no major retrofitting required, dramatically reducing installation time and cost.</p>
+            <p>Our innovative lightweight structures integrate seamlessly into both existing and new buildings — no major retrofitting required, dramatically reducing installation time and cost across all elevator types.</p>
           </div>
         </div>
         <div class="tech-feature reveal reveal-d3">
           <div class="tech-feature-marker">04</div>
           <div>
             <h4>Revolutionary Materials</h4>
-            <p>Next-generation composite materials deliver superior strength-to-weight ratios, surpassing conventional industry durability standards by a significant margin.</p>
+            <p>Next-generation composite materials deliver superior strength-to-weight ratios, surpassing conventional industry durability standards — ensuring every installation stands the test of time in Africa's demanding climates.</p>
           </div>
         </div>
       </div>
-
       <div class="tech-highlight reveal reveal-d2">
         <div class="tech-highlight-num">Zero</div>
-        <p>Compromise on safety. Every Advanced Point elevator is engineered to the highest international standards, with redundant systems and real-time monitoring built in from the ground up.</p>
+        <p>Compromise on safety. Every Advanced Point installation is engineered to the highest international standards, with redundant systems and real-time monitoring built in from the ground up.</p>
         <div class="badge-grid">
           <span class="badge">ISO Compliant</span>
-          <span class="badge">Air Powered</span>
+          <span class="badge">All Lift Types</span>
           <span class="badge">Family Safe</span>
           <span class="badge">Low Maintenance</span>
-          <span class="badge">Power Independent</span>
+          <span class="badge">Pan-African</span>
         </div>
       </div>
     </div>
@@ -1301,55 +1228,15 @@ footer {
   <div class="section-inner">
     <div class="locations-header">
       <div class="section-label reveal">Our Presence</div>
-      <h2 class="section-title reveal">Operating Across <em>Two Nations</em></h2>
-      <p class="reveal" style="color:var(--silver);font-size:var(--text-base);font-weight:300;line-height:1.8;max-width:560px;">
-        Strategically positioned in East and West Africa, Advanced Point PVT Ltd delivers world-class elevator solutions from two dedicated offices — bringing futuristic engineering closer to you.
+      <h2 class="section-title reveal">Operating Across <em>Three Nations</em></h2>
+      <p class="reveal" style="color:var(--silver);font-size:var(--text-base);font-weight:300;line-height:1.8;max-width:600px;">
+        Strategically positioned across West and East Africa, Advanced Point PVT Ltd delivers world-class elevator solutions from three dedicated offices — bringing futuristic engineering closer to you.
       </p>
     </div>
-
     <div class="locations-grid">
 
-      <!-- KENYA -->
-      <div class="location-card reveal reveal-d1">
-        <span class="location-flag">🇰🇪</span>
-        <h3 class="location-country">Kenya<em>.</em></h3>
-        <div class="location-role">East Africa Headquarters</div>
-        <div class="location-divider"></div>
-        <div class="location-details">
-          <div class="location-detail">
-            <div class="location-detail-icon">📍</div>
-            <div class="location-detail-text">
-              <strong>Office Address</strong>
-              Nairobi, Kenya
-            </div>
-          </div>
-          <div class="location-detail">
-            <div class="location-detail-icon">📞</div>
-            <div class="location-detail-text">
-              <strong>Phone</strong>
-              +254 (0) 711 378 910
-            </div>
-          </div>
-          <div class="location-detail">
-            <div class="location-detail-icon">✉️</div>
-            <div class="location-detail-text">
-              <strong>Email</strong>
-              kenya@advancedpointpvt.com
-            </div>
-          </div>
-          <div class="location-detail">
-            <div class="location-detail-icon">🕐</div>
-            <div class="location-detail-text">
-              <strong>Business Hours</strong>
-              Mon–Fri, 8:00 AM – 6:00 PM EAT
-            </div>
-          </div>
-        </div>
-        <a href="#contact" class="location-cta">Get Kenya Quote →</a>
-      </div>
-
       <!-- NIGERIA -->
-      <div class="location-card reveal reveal-d2">
+      <div class="location-card reveal reveal-d1">
         <span class="location-flag">🇳🇬</span>
         <h3 class="location-country">Nigeria<em>.</em></h3>
         <div class="location-role">West Africa Headquarters</div>
@@ -1373,7 +1260,7 @@ footer {
             <div class="location-detail-icon">✉️</div>
             <div class="location-detail-text">
               <strong>Email</strong>
-              nigeria@advancedpointpvt.com
+              advancedpointltd@hotmail.com
             </div>
           </div>
           <div class="location-detail">
@@ -1387,6 +1274,91 @@ footer {
         <a href="#contact" class="location-cta">Get Nigeria Quote →</a>
       </div>
 
+      <!-- KENYA -->
+      <div class="location-card reveal reveal-d2">
+        <span class="location-flag">🇰🇪</span>
+        <h3 class="location-country">Kenya<em>.</em></h3>
+        <div class="location-role">East Africa Headquarters</div>
+        <div class="location-divider"></div>
+        <div class="location-details">
+          <div class="location-detail">
+            <div class="location-detail-icon">📍</div>
+            <div class="location-detail-text">
+              <strong>Office Address</strong>
+              Nairobi, Kenya
+            </div>
+          </div>
+          <div class="location-detail">
+            <div class="location-detail-icon">📞</div>
+            <div class="location-detail-text">
+              <strong>Phone</strong>
+              +254 (0) 711 378 910
+            </div>
+          </div>
+          <div class="location-detail">
+            <div class="location-detail-icon">✉️</div>
+            <div class="location-detail-text">
+              <strong>Email</strong>
+              advancedpointltd@hotmail.com
+            </div>
+          </div>
+          <div class="location-detail">
+            <div class="location-detail-icon">🕐</div>
+            <div class="location-detail-text">
+              <strong>Business Hours</strong>
+              Mon–Fri, 8:00 AM – 6:00 PM EAT
+            </div>
+          </div>
+        </div>
+        <a href="#contact" class="location-cta">Get Kenya Quote →</a>
+      </div>
+
+      <!-- GHANA -->
+      <div class="location-card reveal reveal-d3">
+        <span class="location-flag">🇬🇭</span>
+        <h3 class="location-country">Ghana<em>.</em></h3>
+        <div class="location-role">West Africa — Accra Office</div>
+        <div class="location-divider"></div>
+        <div class="location-details">
+          <div class="location-detail">
+            <div class="location-detail-icon">📍</div>
+            <div class="location-detail-text">
+              <strong>Office Address</strong>
+              Accra, Ghana
+            </div>
+          </div>
+          <div class="location-detail">
+            <div class="location-detail-icon">👤</div>
+            <div class="location-detail-text">
+              <strong>Contact Person</strong>
+              <span class="location-contact-name">Benedictus Orison</span>
+            </div>
+          </div>
+          <div class="location-detail">
+            <div class="location-detail-icon">📞</div>
+            <div class="location-detail-text">
+              <strong>Phone</strong>
+              +233 549 684 468
+            </div>
+          </div>
+          <div class="location-detail">
+            <div class="location-detail-icon">✉️</div>
+            <div class="location-detail-text">
+              <strong>Email</strong>
+              advancedpointltd@hotmail.com
+            </div>
+          </div>
+          <div class="location-detail">
+            <div class="location-detail-icon">🕐</div>
+            <div class="location-detail-text">
+              <strong>Business Hours</strong>
+              Mon–Fri, 8:00 AM – 6:00 PM GMT
+            </div>
+          </div>
+        </div>
+        <a href="#contact" class="location-cta">Get Ghana Quote →</a>
+      </div>
+
     </div>
   </div>
 </section>
@@ -1397,22 +1369,34 @@ footer {
     <div class="section-label reveal">Get In Touch</div>
     <h2 class="section-title reveal">Start Your <em>Project</em></h2>
     <div class="contact-grid">
-
       <div class="contact-info-block reveal">
         <h3>Let's build something <em>extraordinary</em> together.</h3>
-        <p>Whether you need a residential elevator, a full commercial installation, or professional training — our team is ready to deliver a solution tailored exactly to your needs. No obligation, just a conversation.</p>
+        <p>Whether you need a residential elevator, a full commercial installation, or professional training — our teams in Nigeria, Kenya and Ghana are ready to deliver a solution tailored exactly to your needs.</p>
         <div class="contact-details">
           <div class="contact-row">
-            <div class="contact-icon-box">🇰🇪</div>
-            <div class="contact-row-text"><strong style="color:var(--ivory);font-weight:400;display:block;font-size:10px;letter-spacing:0.2em;text-transform:uppercase;margin-bottom:2px">Nairobi, Kenya</strong>+254 (0) 711 378 910</div>
+            <div class="contact-icon-box">🇳🇬</div>
+            <div class="contact-row-text">
+              <strong style="color:var(--ivory);font-weight:400;display:block;font-size:10px;letter-spacing:0.2em;text-transform:uppercase;margin-bottom:2px">Abuja, Nigeria</strong>
+              +234 703 773 9518
+            </div>
           </div>
           <div class="contact-row">
-            <div class="contact-icon-box">🇳🇬</div>
-            <div class="contact-row-text"><strong style="color:var(--ivory);font-weight:400;display:block;font-size:10px;letter-spacing:0.2em;text-transform:uppercase;margin-bottom:2px">Abuja, Nigeria</strong>+234 703 773 9518</div>
+            <div class="contact-icon-box">🇰🇪</div>
+            <div class="contact-row-text">
+              <strong style="color:var(--ivory);font-weight:400;display:block;font-size:10px;letter-spacing:0.2em;text-transform:uppercase;margin-bottom:2px">Nairobi, Kenya</strong>
+              +254 (0) 711 378 910
+            </div>
+          </div>
+          <div class="contact-row">
+            <div class="contact-icon-box">🇬🇭</div>
+            <div class="contact-row-text">
+              <strong style="color:var(--ivory);font-weight:400;display:block;font-size:10px;letter-spacing:0.2em;text-transform:uppercase;margin-bottom:2px">Accra, Ghana — Benedictus Orison</strong>
+              +233 549 684 468
+            </div>
           </div>
           <div class="contact-row">
             <div class="contact-icon-box">✉️</div>
-            <div class="contact-row-text">info@advancedpointpvt.com</div>
+            <div class="contact-row-text">advancedpointltd@hotmail.com</div>
           </div>
           <div class="contact-row">
             <div class="contact-icon-box">🕐</div>
@@ -1422,7 +1406,6 @@ footer {
       </div>
 
       <div class="reveal reveal-d2">
-        <!-- PRODUCTION FORM WITH FORMSPREE INTEGRATION -->
         <form class="lead-form" id="leadForm" action="https://formspree.io/f/xojpbkey" method="POST" novalidate>
           <div class="form-row-2">
             <div class="form-field">
@@ -1445,28 +1428,45 @@ footer {
             </div>
           </div>
           <div class="form-field">
+            <label for="country">Country *</label>
+            <select id="country" name="country" required>
+              <option value="" disabled selected>Select your country...</option>
+              <option>Nigeria</option>
+              <option>Kenya</option>
+              <option>Ghana</option>
+              <option>Other</option>
+            </select>
+          </div>
+          <div class="form-field">
             <label for="service">Service of Interest *</label>
             <select id="service" name="service" required>
               <option value="" disabled selected>Select a service...</option>
-              <option>Elevator Installation</option>
-              <option>Repairs & Maintenance</option>
-              <option>Procurement & Shipment</option>
-              <option>Project Management</option>
-              <option>Property Management & Real Estate</option>
-              <option>Training & Certification</option>
-              <option>General Merchandise</option>
+              <optgroup label="— Elevator Types —">
+                <option>Traction Elevator</option>
+                <option>Hydraulic Elevator</option>
+                <option>Vacuum / Pneumatic Elevator</option>
+                <option>Stairlift</option>
+                <option>Machine Room-Less (MRL) Elevator</option>
+                <option>Platform Lift / Dumbwaiter</option>
+              </optgroup>
+              <optgroup label="— Services —">
+                <option>Installation (New Build)</option>
+                <option>Repairs & Maintenance</option>
+                <option>Procurement & Shipment</option>
+                <option>Project Management</option>
+                <option>Property Management & Real Estate</option>
+                <option>Training & Certification</option>
+                <option>General Merchandise</option>
+              </optgroup>
               <option>Other / Not Sure</option>
             </select>
           </div>
           <div class="form-field">
             <label for="message">Project Details</label>
-            <textarea id="message" name="message" placeholder="Tell us about your project, building type, timeline, or any questions..."></textarea>
+            <textarea id="message" name="message" placeholder="Tell us about your project — building type, number of floors, timeline, or any questions..."></textarea>
           </div>
-
-          <!-- Formspree hidden fields for clean inbox emails -->
-          <input type="hidden" name="_subject" value="New Lead from Advanced Point Website">
+          <input type="hidden" name="_subject" value="New Lead — Advanced Point PVT Ltd Website">
           <input type="hidden" name="_language" value="en">
-
           <button type="submit" class="form-submit">
             <span>Send Enquiry — No Obligation</span>
           </button>
@@ -1484,19 +1484,18 @@ footer {
       <div class="footer-brand">
         <a href="#" class="nav-logo" aria-label="Advanced Point Home">
           <span class="nav-logo-main" style="font-size:clamp(18px,4vw,22px)">Advanced Point</span>
-          <span class="nav-logo-sub">PVT Ltd — Kenya &amp; Nigeria</span>
+          <span class="nav-logo-sub">PVT Ltd</span>
         </a>
-        <p class="footer-brand-desc">Futuristic engineering services within the elevator industry. Redefining safety, durability, and innovation for homes and buildings across Kenya and beyond.</p>
+        <p class="footer-brand-desc">Futuristic elevator engineering across Africa. Traction, hydraulic, vacuum, stairlifts and more — redefining safety, durability and innovation across Nigeria, Kenya and Ghana.</p>
       </div>
-
       <div class="footer-links-grid">
         <div class="footer-col">
           <h5>Services</h5>
           <ul>
+            <li><a href="#elevator-types">Elevator Types</a></li>
             <li><a href="#services">Installation & Repairs</a></li>
             <li><a href="#services">Procurement & Shipment</a></li>
             <li><a href="#services">Project Management</a></li>
-            <li><a href="#services">Property Management</a></li>
             <li><a href="#services">Training & Certification</a></li>
           </ul>
         </div>
@@ -1505,68 +1504,56 @@ footer {
           <ul>
             <li><a href="#about">About Us</a></li>
             <li><a href="#technology">Our Technology</a></li>
-            <li><a href="#contact">Contact</a></li>
+            <li><a href="#locations">Our Locations</a></li>
             <li><a href="#contact">Get a Quote</a></li>
           </ul>
         </div>
         <div class="footer-col">
-          <h5>🇰🇪 Kenya Office</h5>
+          <h5>Contact</h5>
           <ul>
-            <li><a href="#">Nairobi, Kenya</a></li>
-            <li><a href="mailto:kenya@advancedpointpvt.com">kenya@advancedpointpvt.com</a></li>
-            <li><a href="tel:+254711378910">+254 711 378 910</a></li>
-          </ul>
-        </div>
-        <div class="footer-col">
-          <h5>🇳🇬 Nigeria Office</h5>
-          <ul>
-            <li><a href="#">Abuja, Nigeria</a></li>
-            <li><a href="mailto:nigeria@advancedpointpvt.com">nigeria@advancedpointpvt.com</a></li>
-            <li><a href="tel:+234 703 773 9518">+234 703 773 9518</a></li>
+            <li><a href="mailto:advancedpointltd@hotmail.com">advancedpointltd@hotmail.com</a></li>
+            <li><a href="tel:+234703773951">🇳🇬 +234 703 773 9518</a></li>
+            <li><a href="tel:+254711378910">🇰🇪 +254 711 378 910</a></li>
+            <li><a href="tel:+233549684468">🇬🇭 +233 549 684 468</a></li>
           </ul>
         </div>
       </div>
     </div>
-
     <div class="footer-divider"></div>
     <div class="footer-bottom">
-      <p>© 2026 Advanced Point PVT Ltd. All rights reserved.</p>
+      <p>© 2026 Advanced Point PVT Ltd. All rights reserved. Nigeria · Kenya · Ghana</p>
       <p>Engineered with <span>◆</span> precision</p>
     </div>
   </div>
 </footer>
-<!-- ============ WHATSAPP FLOATING BUTTON ============ -->
-<a href="https://wa.me/254711378910?text=Hello%20Advanced%20Point%2C%20I%27m%20interested%20in%20your%20elevator%20solutions%20and%20would%20like%20more%20information." 
-   class="whatsapp-float" 
-   target="_blank" 
-   rel="noopener noreferrer"
-   aria-label="Chat with us on WhatsApp">
+
+<!-- ============ WHATSAPP ============ -->
+<a href="https://wa.me/254711378910?text=Hello%20Advanced%20Point%2C%20I%27m%20interested%20in%20your%20elevator%20solutions%20and%20would%20like%20more%20information."
+   class="whatsapp-float" target="_blank" rel="noopener noreferrer" aria-label="Chat with us on WhatsApp">
   💬
 </a>
+
 <script>
-/* ============ CURSOR (desktop only) ============ */
+/* CURSOR */
 const cursor = document.getElementById('cursor');
 const ring = document.getElementById('cursorRing');
 if (cursor && ring && window.matchMedia('(hover:hover) and (pointer:fine)').matches) {
-  let mx = 0, my = 0, rx = 0, ry = 0;
-  document.addEventListener('mousemove', e => { mx = e.clientX; my = e.clientY; });
+  let mx=0,my=0,rx=0,ry=0;
+  document.addEventListener('mousemove', e => { mx=e.clientX; my=e.clientY; });
   const moveCursor = () => {
     cursor.style.cssText = `left:${mx}px;top:${my}px`;
-    rx += (mx - rx) * 0.12;
-    ry += (my - ry) * 0.12;
+    rx += (mx-rx)*.12; ry += (my-ry)*.12;
     ring.style.cssText = `left:${rx}px;top:${ry}px`;
     requestAnimationFrame(moveCursor);
   };
   moveCursor();
 }
 
-/* ============ NAV SCROLL ============ */
+/* NAV SCROLL */
 const nav = document.getElementById('mainNav');
-window.addEventListener('scroll', () => {
-  nav.classList.toggle('scrolled', window.scrollY > 50);
-}, { passive: true });
+window.addEventListener('scroll', () => nav.classList.toggle('scrolled', scrollY > 50), { passive:true });
 
-/* ============ HAMBURGER MENU ============ */
+/* HAMBURGER */
 const hamburger = document.getElementById('hamburger');
 const mobileMenu = document.getElementById('mobileMenu');
 const mobileLinks = document.querySelectorAll('.mobile-nav-link');
@@ -1574,116 +1561,76 @@ const mobileLinks = document.querySelectorAll('.mobile-nav-link');
 function closeMobileMenu() {
   hamburger.classList.remove('open');
   mobileMenu.classList.remove('open');
-  hamburger.setAttribute('aria-expanded', 'false');
+  hamburger.setAttribute('aria-expanded','false');
   document.body.style.overflow = '';
 }
-
 hamburger.addEventListener('click', () => {
   const isOpen = mobileMenu.classList.toggle('open');
   hamburger.classList.toggle('open', isOpen);
   hamburger.setAttribute('aria-expanded', String(isOpen));
   document.body.style.overflow = isOpen ? 'hidden' : '';
 });
-
 mobileLinks.forEach(link => {
   link.addEventListener('click', () => {
     closeMobileMenu();
     if (link.classList.contains('mobile-menu-cta')) {
-      setTimeout(() => {
-        document.getElementById('contact').scrollIntoView({ behavior: 'smooth' });
-      }, 300);
+      setTimeout(() => document.getElementById('contact').scrollIntoView({ behavior:'smooth' }), 300);
     }
   });
 });
+mobileMenu.addEventListener('click', e => { if (e.target === mobileMenu) closeMobileMenu(); });
 
-// Close on outside tap
-mobileMenu.addEventListener('click', e => {
-  if (e.target === mobileMenu) closeMobileMenu();
-});
-
-/* ============ SCROLL REVEAL ============ */
+/* SCROLL REVEAL */
 const reveals = document.querySelectorAll('.reveal');
 const revealObserver = new IntersectionObserver(entries => {
   entries.forEach(e => {
-    if (e.isIntersecting) {
-      e.target.classList.add('visible');
-      revealObserver.unobserve(e.target);
-    }
+    if (e.isIntersecting) { e.target.classList.add('visible'); revealObserver.unobserve(e.target); }
   });
 }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
 reveals.forEach(r => revealObserver.observe(r));
 
-/* ============ FORM SUBMIT — FORMSPREE (AJAX + Inbox Delivery) ============ */
+/* FORM — FORMSPREE AJAX */
 const leadForm = document.getElementById('leadForm');
-
 if (leadForm) {
   leadForm.addEventListener('submit', async function(e) {
     e.preventDefault();
-
-    const form = this;
-    const submitButton = form.querySelector('.form-submit');
-    const buttonSpan = submitButton.querySelector('span');
-    const originalButtonText = buttonSpan.innerHTML;
-
-    // Disable button + loading state
-    submitButton.disabled = true;
-    buttonSpan.innerHTML = 'Sending enquiry...';
-
+    const btn = this.querySelector('.form-submit');
+    const btnSpan = btn.querySelector('span');
+    const orig = btnSpan.innerHTML;
+    btn.disabled = true;
+    btnSpan.innerHTML = 'Sending enquiry...';
     try {
-      const response = await fetch(form.action, {
-        method: form.method,
-        body: new FormData(form),
-        headers: {
-          'Accept': 'application/json'
-        }
+      const res = await fetch(this.action, {
+        method: this.method,
+        body: new FormData(this),
+        headers: { 'Accept': 'application/json' }
       });
-
-      if (response.ok) {
-        // SUCCESS → show toast + reset form
+      if (res.ok) {
         const toast = document.getElementById('toast');
         toast.classList.add('show');
         setTimeout(() => toast.classList.remove('show'), 4500);
-        form.reset();
-      } else {
-        throw new Error('Formspree error');
-      }
-    } catch (error) {
-      // Simple error toast
-      const errorToast = document.createElement('div');
-      errorToast.style.cssText = `
-        position: fixed; 
-        bottom: clamp(16px,4vw,32px); 
-        left: 50%; 
-        transform: translateX(-50%); 
-        background: #ff4444; 
-        color: white; 
-        padding: 16px 24px; 
-        font-size: 14px; 
-        border-radius: 4px; 
-        z-index: 10000; 
-        box-shadow: 0 4px 12px rgba(0,0,0,.3);
-      `;
-      errorToast.textContent = '⚠️ Something went wrong. Please try again.';
-      document.body.appendChild(errorToast);
-      setTimeout(() => errorToast.remove(), 4000);
+        this.reset();
+      } else { throw new Error('error'); }
+    } catch {
+      const err = document.createElement('div');
+      err.style.cssText = 'position:fixed;bottom:32px;left:50%;transform:translateX(-50%);background:#c44a2a;color:white;padding:16px 24px;font-size:14px;z-index:10000;';
+      err.textContent = '⚠️ Something went wrong. Please try again.';
+      document.body.appendChild(err);
+      setTimeout(() => err.remove(), 4000);
     } finally {
-      // Restore button
-      submitButton.disabled = false;
-      buttonSpan.innerHTML = originalButtonText;
+      btn.disabled = false;
+      btnSpan.innerHTML = orig;
     }
   });
 }
 
-/* ============ SMOOTH ANCHOR SCROLL ============ */
+/* SMOOTH SCROLL */
 document.querySelectorAll('a[href^="#"]').forEach(a => {
   a.addEventListener('click', e => {
     const id = a.getAttribute('href');
     if (id === '#') return;
-    const target = document.querySelector(id);
-    if (target) {
-      e.preventDefault();
-      target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    }
+    const el = document.querySelector(id);
+    if (el) { e.preventDefault(); el.scrollIntoView({ behavior:'smooth', block:'start' }); }
   });
 });
 </script>
